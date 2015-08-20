@@ -1,0 +1,10 @@
+{
+    "email": "chrisdavis@gmail.com",
+    "password": "iloveguys",
+    "name": {
+        "first" : "Chris",
+        "last" : "Davis"
+    },
+    "username": "chrisdavis",
+    "phonenumber": 5107964352
+}

@@ -186,43 +186,9 @@
 
     <!-- Template -->   
 
-    <script>
-
-    angular.module('app', ['ngRoute'])
-      // Service
-      .factory('Posts', ['$http', function($http){
-        return $http.get('/api/postsordered');
-      }])
-
-      // Controller
-      .controller('PostController', ['$scope', 'Posts', function ($scope, Posts) {
-        Posts.success(function(data){
-          $scope.posts = data;
-        }).error(function(data, status){
-          console.log(data, status);
-          $scope.posts = [];
-        });
-      }])
-      
-      .controller('PostDetailCtrl', ['$scope', '$routeParams', 'Posts', function ($scope, $routeParams, Posts) {
-        $scope.post = Posts[$routeParams.id];
-      }])
-      
-      .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider
-          // .when('/', {
-          //   templateUrl: '/homefeed.html',
-          //   controller: 'TodoController'
-          // })
-        
-          .when('/:id', {
-            templateUrl: '/postDetails.html',
-            controller: 'PostDetailCtrl'
-         });
-      }]);
-
-
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
 
 
 

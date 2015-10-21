@@ -5,23 +5,22 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 
 
-router.get('/', function (req, res) {
-    res.render('index', { title: 'Express' });
-});
+// router.get('/', function (req, res) {
+//     // res.render('index', { title: 'Express' });
+//     res.sendFile(path.join("/Users/brianendo/Desktop/Source/public/homefeed.html"));
+// });
 
 router.get('/register', function(req, res) {
     res.render('signup');
 });
 
 router.post('/register', function(req, res) {
-    User.register(new User({ username : req.body.username }), req.body.password, function(err, user) {
+    User.register(new User({ username : req.body.username, email : req.body.email, firstname : req.body.firstname, lastname : req.body.lastname }), req.body.password, function(err, user) {
         if (err) {
-            return res.render('signup');
+          return res.status(500).json({err: err});
         }
-
         passport.authenticate('local')(req, res, function () {
-            console.log("Added User");
-            res.redirect('/',{ title: 'Express' });
+          return res.status(200).json({status: 'Registration successful!'});
         });
     });
 });
@@ -29,7 +28,7 @@ router.post('/register', function(req, res) {
 router.get('/login', function(req, res) {
     res.render('index',{ title: 'Express' });
 });
-
+// 
 
 router.post('/login', function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
@@ -49,9 +48,10 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/logout', function(req, res) {
-    req.logout();
-    res.redirect('/');
+  req.logout();
+  res.status(200).json({status: 'Bye!'});
 });
+
 
 router.get('/ping', function(req, res){
     res.status(200).send("pong!");
@@ -98,9 +98,9 @@ router.get('/angular', function(req, res) {
 
 
 // Get signup page
-router.get('/signup', function(req, res){
-  res.render('signup.ejs');
-});
+// router.get('/signup', function(req, res){
+//   res.render('signup.ejs');
+// });
 
 
 

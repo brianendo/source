@@ -52,6 +52,11 @@ app.use(passport.session());
 // Use these routes
 app.use('/', routes);
 
+app.get('/', function (req, res) {
+    // res.render('index', { title: 'Express' });
+    res.sendFile(path.join(__dirname + "/public/index.html"));
+});
+
 app.listen(5000);
 
 module.exports = app;

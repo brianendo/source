@@ -1,0 +1,118 @@
+/*!
+ * Start Bootstrap - Blog Home HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+	font-family: 'Merriweather Sans', sans-serif;
+}
+
+
+/*.col-md-8 {
+	background-color: white;
+}*/
+
+footer {
+    margin: 50px 0;
+}
+
+.navbar {
+	background-color: white;
+	border-color: #4A90E2;
+	font-weight: normal;
+}
+
+#title {
+	color: #4A90E2;
+	font-size: 24px;
+	font-weight: bold;
+
+}
+
+#blogtitle {
+	color: black;
+	font-weight: bold;
+	font-size: 26px;
+}
+
+#profilepic {
+	float: left;
+	height: 35px;
+	width: 35px;
+}
+
+#profilename {
+	padding-left: 10px;
+	float: left;
+	padding-top: 8px;
+	font-size: 16px;
+	color: gray;
+}
+
+.block {
+	clear:both;
+}
+
+#contribute {
+	font-weight: normal;
+	font-size: 30px;
+	font-style: italic;
+	color: #4A90E2;
+}
+
+hr {
+	border-color: lightgray;
+	clear: both;
+}
+
+.well {
+	background-color: white;
+	font-size: 14px;
+}
+
+#teasercontent {
+	font-size: 18px;
+	font-weight: lighter;
+	line-height: 28px;
+	color: black;
+	text-decoration: none;
+}
+
+#titlespace {
+	clear: both;
+}
+
+.timeago {
+	float: right;
+	padding-top: 12px;
+	color: gray;
+	font-weight: lighter;
+	font-size: 14px;
+}
+
+#nav:hover {
+	color: #4A90E2;
+}
+
+#coverimage {
+
+}
+
+#chatpic {
+	height: 25px;
+	width: auto;
+	float: left;
+}
+
+#count {
+	color: gray;
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+	padding-left: 5px;
+}
+
+
+

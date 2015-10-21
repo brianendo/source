@@ -1,0 +1,23 @@
+{
+  "name": "Brian",
+  "version": "0.0.0",
+  "homepage": "https://github.com/brianendo/sonarbackend",
+  "authors": [
+    "Brian Endo <bae46@cornell.edu>"
+  ],
+  "keywords": [
+    "news"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-timeago": "~0.2.4"
+  }
+}

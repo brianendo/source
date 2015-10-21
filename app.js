@@ -25,10 +25,17 @@ mongoose.connect('mongodb://localhost/sonar', function (err) {
   }
 });
 
+// passport config
+var User = require('./models/user');
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use('/public', express.static(__dirname + "/public"));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -45,7 +52,7 @@ app.use(passport.session());
 // Use these routes
 app.use('/', routes);
 
-
+app.listen(5000);
 
 module.exports = app;
 

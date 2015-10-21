@@ -1,0 +1,230 @@
+<html ng-app="app">
+<head>
+  <title>Source</title>
+  <!-- Libraries -->
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Source</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/blog-home.css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body ng-controller="PostController">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" id="title">SOURCE</a>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a id="nav" href="">About</a>
+                    </li>
+                    <li>
+                        <a id="nav" href="">Contributors</a>
+                    </li>
+                    <li>
+                        <a id="nav" href="">Contact</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                  <li>
+                        <a id="nav" href="">Submit a Post</a>
+                  </li>
+                </ul>
+                
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <!-- Blog Entries Column -->
+            <div class="col-md-7">
+
+                <h2>
+                    <a id="contribute" href="">Write and contribute to the Source community!</a>
+                </h2>
+                <hr>
+
+                <div ng-repeat="post in posts">
+                  <img id="profilepic" src="../public/images/ProfilePic.png" alt="">
+                  <p class="lead" id="profilename">{{post.creatorname}}</p>
+                  <p class="timeago">{{post.created_at | date : 'short'}}</p>
+
+                  <div id="coverimage">
+                  <a href=""><img class="img-responsive" src="{{post.image_url}}" alt=""></a>
+                  </div>
+                  <h2 id="titlespace">
+                    <a id="blogtitle" href="#/{{$index}}"> {{post.title}} </a>
+                  </h2>
+                  <div class="block">
+                  <a id="teasercontent" href=""><p>{{post.content}}</p></a>
+                  </div>
+                  <hr>
+                </div>
+              
+                <!-- First Blog Post -->
+                <img id="profilepic" src="../public/images/ProfilePic.png" alt="">
+                <p class="lead" id="profilename">Brian Endo</p>
+                <p class="timeago">2 min ago</p>
+                <div id="coverimage">
+                <a href=""><img class="img-responsive" src="../public/images/Newspaper.png" alt=""></a>
+                </div>
+                <h2 id="titlespace">
+                    <a id="blogtitle" href="">Introducing Source: Bringing the local community together</a>
+                </h2>
+                <div class="block">
+                <a id="teasercontent" href=""><p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p></a>
+                </div>
+                <hr>
+
+                <!-- Second Blog Post -->
+                <img id="profilepic" src="../public/images/ProfilePic.png" alt="">
+                <p class="lead" id="profilename">Brian Endo</p>
+                <p class="timeago">30 min ago</p>
+                <h2 id="titlespace">
+                    <a id="blogtitle" href="">A Kickstarter Campaign that can change Fremont forever</a>
+                </h2>
+                
+                
+                <div class="block">
+                <a id="teasercontent" href=""><p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p></a>
+                </div>
+                <hr>
+
+                <!-- Third Blog Post -->
+                <img id="profilepic" src="../public/images/ProfilePic.png" alt="">
+                <p class="lead" id="profilename">Brian Endo</p>
+                <p class="timeago">1 hr ago</p>
+                <h2 id="titlespace">
+                    <a id="blogtitle" href="">What aspects of the community are most important to you?</a>
+                </h2>
+                <img id="chatpic" src="../public/images/Chat.png" alt="">
+                <p id="count">5</p>
+                <hr>
+
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <h4>Suggestions</h4>
+                    <p>If you have any suggestions for improving Source. Feel free to email me at brian@thoughtless.io</p>
+                </div>
+
+                <div class="well">
+                    <h4>Newsletter</h4>
+                    <p>Input your email here to subscribe to the Source newsletter.</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Thoughtless Labs 2015</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Template -->   
+
+    <script>
+
+    angular.module('app', ['ngRoute'])
+      // Service
+      .factory('Posts', ['$http', function($http){
+        return $http.get('/api/postsordered');
+      }])
+
+      // Controller
+      .controller('PostController', ['$scope', 'Posts', function ($scope, Posts) {
+        Posts.success(function(data){
+          $scope.posts = data;
+        }).error(function(data, status){
+          console.log(data, status);
+          $scope.posts = [];
+        });
+      }])
+      
+      .controller('PostDetailCtrl', ['$scope', '$routeParams', 'Posts', function ($scope, $routeParams, Posts) {
+        $scope.post = Posts[$routeParams.id];
+      }])
+      
+      .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider
+          // .when('/', {
+          //   templateUrl: '/homefeed.html',
+          //   controller: 'TodoController'
+          // })
+        
+          .when('/:id', {
+            templateUrl: '/postDetails.html',
+            controller: 'PostDetailCtrl'
+         });
+      }]);
+
+
+    </script>
+
+
+
+</body>
+</html>
